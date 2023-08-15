@@ -1,3 +1,4 @@
+#!/bin/python3
 # -*- coding: utf-8 -*-
 import requests, json, sys, time
 
@@ -48,5 +49,5 @@ if response.status_code == 200:
                     sys.stdout.flush() 
                     time.sleep(0.1)
 else:
-    print(f'Failed to connect to the EventSource server: {response.status_code}')
+    print(f'Failed to connect to the EventSource server: {response.status_code}', response.status_code)
 print('')
