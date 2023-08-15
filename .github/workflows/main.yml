@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [macos-latest, ubuntu-latest, windows-latest, centos-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check-out repository
@@ -19,7 +19,7 @@ jobs:
       - name: Create Executable
         uses: sayyid5416/pyinstaller@v1
         with:
-          python_ver: '3.6'
+          python_ver: '3.10'
           spec: 'main.py'
           upload_exe_with_name: 'gpt'
           options: --onefile, --name "gpt-shell", --windowed, 
