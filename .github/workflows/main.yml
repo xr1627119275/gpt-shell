@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest, centos-latest]
+        os: [macos-latest, ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check-out repository
@@ -21,5 +21,6 @@ jobs:
         with:
           python_ver: '3.10'
           spec: 'main.py'
+          requirements: 'requirements.txt'
           upload_exe_with_name: 'gpt'
-          options: --onefile, --name "gpt-shell", --windowed, 
+          options: --onefile, --name "gptshell", --windowed, 
